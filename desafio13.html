@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--doctype informa ao agente de usuario a versão do html que deve ser rendenizada-->
+<html lang="pt-br">
+<head>
+<title>Desafios Gustavo Guanabara</title>
+<meta charset="utf-8">
+<meta name="author" content="Sarah">
+<meta name="description" content="Desafios JavaScript">
+<meta name="keywords" content="Praticando JavaScript">
+<meta name="viewport" content="width=device-width">
+</head>
+<body>
+    <h1>Situação do aluno</h1>
+
+    <button onclick="notas()">Entrar com as notas</button>
+
+    <p class="text">Clique no botão acima para informar as notas do aluno</p>
+<script>
+    function notas(){
+        let nome = prompt("Qual é o nome do aluno?");
+        let primeiraNota = prompt("Primeira nota de " + nome);
+        primeiraNota = parseFloat(primeiraNota);
+
+        let segundaNota = prompt("Segunda nota de " + nome);
+        segundaNota = parseFloat(segundaNota);
+
+        let somaFinal = primeiraNota + segundaNota;
+        somaFinal = somaFinal / 2;
+
+        let substituir = "";
+
+        if(somaFinal >= 6.01){
+           for(let i = 1; i <= 1; i++){
+           substituir += "Com as notas " + primeiraNota + " e " + segundaNota + ", " + "A média é " + somaFinal + "<br>";
+           substituir += "Com média acima de 6.0, o aluno está APROVADO";
+        };
+        document.querySelector(".text").innerHTML = substituir;
+        }else if(somaFinal > 3 && somaFinal <= 6){
+            for(let i = 1; i <= 1; i++){
+            substituir += "Com as notas " + primeiraNota + " e " + segundaNota + ", " + "A média é " + somaFinal + "<br>";
+            substituir += "Com média entre 3.0 de 6.0, o aluno está em RECUPERAÇÃO";
+            };
+        document.querySelector(".text").innerHTML = substituir;
+        }else{
+            for(let i = 1; i <= 1; i++){
+            substituir += "Com as notas " + primeiraNota + " e " + segundaNota + ", " + "A média é " + somaFinal + "<br>";
+            substituir += "Com média abaixo de 3.0, o aluno está REPROVADO";
+            };
+        document.querySelector(".text").innerHTML = substituir;
+        };
+    };
+</script>
+
+</body>
+</html>

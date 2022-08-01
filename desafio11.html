@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--doctype informa ao agente de usuario a versão do html que deve ser rendenizada-->
+<html lang="pt-br">
+<head>
+<title>Desafios Gustavo Guanabara</title>
+<meta charset="utf-8">
+<meta name="author" content="Sarah">
+<meta name="description" content="Desafios JavaScript">
+<meta name="keywords" content="Praticando JavaScript">
+<meta name="viewport" content="width=device-width">
+</head>
+<body>
+    <h1>Ano Bissexto</h1>
+    <button onclick="verificar()">Verificar</button>
+    <h2 class="text"></h2>
+    <p class="mostrar">Informe o ano para saber se ele é bissexto</p>
+
+<script>
+    function verificar(){
+        let digiteData = prompt("Digite um ano");
+        let transformarData = parseInt(digiteData);
+        document.querySelector(".text").innerHTML = "Analisando o ano de " + transformarData + "...";
+        
+        if(transformarData % 4 === 0){
+            document.querySelector(".mostrar").innerHTML = "O ano de " + transformarData + " É BISSEXTO";
+        }else{
+            document.querySelector(".mostrar").innerHTML = "O ano de " + transformarData + " NÃO É BISSEXTO";
+        };
+};
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--doctype informa ao agente de usuario a versão do html que deve ser rendenizada-->
+<html lang="pt-br">
+<head>
+<title>Desafios Gustavo Guanabara</title>
+<meta charset="utf-8">
+<meta name="author" content="Sarah">
+<meta name="description" content="Desafios JavaScript">
+<meta name="keywords" content="Praticando JavaScript">
+<meta name="viewport" content="width=device-width">
+</head>
+<body>
+    <h1>Desafio conversor de medidas</h1>
+    <button onclick="converter()">Converter</button>
+    <div class="resultado"></div>
+    <p class="click">Clique no botão acima para iniciar.</p>
+
+<script>
+    function converter(){
+        let distancia = prompt("Digite uma distância em metros (m)");
+        let converterDistancia = parseFloat(distancia);
+        let km = converterDistancia/1000;
+        let hm = converterDistancia/100;
+        let dam = converterDistancia/10;
+        let dm = converterDistancia/10;
+        let cm = converterDistancia*100;
+        let mm = converterDistancia/0.0010000;
+
+        let resultado = document.querySelector(".resultado");
+        resultado.innerHTML = "<h3>" + `${"A distância de"} ${converterDistancia} ${"metros, corresponde a..."}` + "</h3>";
+
+        let inserir = "";
+
+        for(let i = 1; i <= 1; i++){
+        inserir += km.toFixed(3) + " quilômetros (km)" + "<br>";
+        inserir += hm.toFixed(3) + " hectômetros (hm)" + "<br>";
+        inserir += dam.toFixed(3) + " decâmetros (dam)" + "<br>";
+        inserir += dm.toFixed(3) + " decímetros (dm)" + "<br>";
+        inserir += cm.toFixed(3) + " centímetros (cm)" + "<br>";
+        inserir += mm.toFixed(3)+ " milímetros (mm)" + "<br>";
+        };
+        document.querySelector(".click").innerHTML = inserir;
+    };
+</script>
+</body>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--doctype informa ao agente de usuario a versão do html que deve ser rendenizada-->
+<html lang="pt-br">
+<head>
+<title>Desafios Gustavo Guanabara</title>
+<meta charset="utf-8">
+<meta name="author" content="Sarah">
+<meta name="description" content="Desafios JavaScript">
+<meta name="keywords" content="Praticando JavaScript">
+<meta name="viewport" content="width=device-width">
+</head>
+<body>
+    <h1>Desafio calculadora de troco</h1>
+    <button onclick="troco()">Calculando o troco</button>
+
+<script>
+    function troco(){
+        let produto = prompt("qual produto você está comprando?");
+        let valor = prompt(`${"Quanto custa o"} ${produto} ${"que você está comprando?"}`);
+        let numero = parseFloat(valor);
+        let valorDado = prompt(`${"Qual foi o valor que você deu para comprar o"} ${produto}`);
+        let valorPago = parseFloat(valorDado);
+        let valorFinal = alert(`${"Você comprou"} ${produto} ${"que custou R$"}${valor}${". Deu R$"}${valorPago} ${"em Dinheiro e vai receber R$"}${valorPago-valor} ${"de troco. Volte sempre!"}`);
+    };
+</script>
+</body>
+</html>

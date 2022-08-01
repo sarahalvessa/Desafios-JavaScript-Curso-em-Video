@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--doctype informa ao agente de usuario a versão do html que deve ser rendenizada-->
+<html lang="pt-br">
+<head>
+<title>Desafios Gustavo Guanabara</title>
+<meta charset="utf-8">
+<meta name="author" content="Sarah">
+<meta name="description" content="Desafios JavaScript">
+<meta name="keywords" content="Praticando JavaScript">
+<meta name="viewport" content="width=device-width">
+</head>
+<body>
+    <h1>Preço mudou</h1>
+    <button onclick="verificar()">Verificar</button>
+    <p class="text">Clique no botão acima para analisar a mudança de preço.</p>
+
+    <script>
+        function verificar(){
+            let valorAnterior = prompt("Qual era o preço anterior do produto");
+            valorAnterior = parseFloat(valorAnterior);
+            let valorAtual = prompt("Qual é o preço atual do produto")
+            valorAtual = parseFloat(valorAtual);
+            let subtrair = valorAnterior - valorAtual;
+            let subtrairatual = valorAtual - valorAnterior;
+            let porcentagemAnteriorM =  (valorAnterior - valorAtual) * 100 / valorAtual;
+            let porcentagemAnteriorMe =  (valorAtual - valorAnterior) * 100 / valorAnterior;
+            
+            if(valorAnterior > valorAtual){
+                let substituir = "";
+                for(let i = 1; i <= 1; i++){
+                    substituir += "O produto custava R$ " + valorAnterior.toLocaleString('pt-br', {minimumFractionDigits: 2}) + " e agora custa R$ " + valorAtual.toLocaleString('pt-br', {minimumFractionDigits: 2}) + "<br>";
+                    substituir += "Hoje o produto está mais barato." + "<br>";
+                    substituir += "O preço caiu R$ " +  subtrair.toLocaleString('pt-br', {minimumFractionDigits: 2}) + " em relação ao preço anterior." + "<br>"
+                    substituir += "Uma variação de " + porcentagemAnteriorM.toFixed(2) + "% pra baixo.";
+                    document.querySelector(".text").innerHTML = substituir;
+                };
+                }else{
+                    let substituir = "";
+                    for(let i = 1; i <= 1; i++){
+                        substituir += "O produto custava R$ " + valorAnterior.toLocaleString('pt-br', {minimumFractionDigits: 2}) + " e agora custa R$ " + valorAtual.toLocaleString('pt-br', {minimumFractionDigits: 2}) + "<br>";
+                        substituir += "Hoje o produto está mais caro." + "<br>";
+                        substituir += "O preço subiu R$ " +  subtrairatual.toLocaleString('pt-br', {minimumFractionDigits: 2}) + " em relação ao preço anterior." + "<br>";
+                        substituir += "Uma variação de " + porcentagemAnteriorMe.toFixed(2) + "% pra cima.";
+                        document.querySelector(".text").innerHTML = substituir;
+                    };
+                };
+        };
+    </script>
+</body>
+</html>

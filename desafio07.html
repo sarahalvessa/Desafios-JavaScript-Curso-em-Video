@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--doctype informa ao agente de usuario a versão do html que deve ser rendenizada-->
+<html lang="pt-br">
+<head>
+<title>Desafios Gustavo Guanabara</title>
+<meta charset="utf-8">
+<meta name="author" content="Sarah">
+<meta name="description" content="Desafios JavaScript">
+<meta name="keywords" content="Praticando JavaScript">
+<meta name="viewport" content="width=device-width">
+</head>
+<body>
+    <h1>Conversor R$ -> US$</h1>
+    <button>Converter</button>
+    <p class="text">Clique no botão acima para iniciar</p>
+<script>
+    function alerta(){
+        let cotacaoAtual = prompt("Antes de mais nada. Quanto está a cotação do dólar agora?");
+        let cotacaoNumero = parseFloat(cotacaoAtual);
+
+        let carteira = prompt("Quantos R$ você tem na carteira?");
+        let carteiraNumero = parseFloat(carteira); 
+        let comprarDolar =  carteiraNumero / cotacaoNumero;
+        let fixar = comprarDolar.toFixed(2);
+
+        document.querySelector(".text").innerHTML = `${"Com R$"}${carteiraNumero}${" você conseguirá comprar US$"}${fixar}`;
+    };
+
+    alerta();
+</script>
+</body>

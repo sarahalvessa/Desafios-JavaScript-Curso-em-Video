@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--doctype informa ao agente de usuario a versão do html que deve ser rendenizada-->
+<html lang="pt-br">
+<head>
+<title>Desafios Gustavo Guanabara</title>
+<meta charset="utf-8">
+<meta name="author" content="Sarah">
+<meta name="description" content="Desafios JavaScript">
+<meta name="keywords" content="Praticando JavaScript">
+<meta name="viewport" content="width=device-width">
+</head>
+<body>
+    <h1>Resolvendo Bhaskara</h1>
+    <button onclick="calcular()">Calcular</button>
+    <h2 class="text"></h2>
+    <p class="mostrar">Considerando uma equação no formato aperte no botão acima para calcular o valor de</p>
+
+<script>
+    function calcular(){
+        let a = prompt("Qual é o valor de a?");
+        let intA = parseInt(a); 
+        let b = prompt("Qual é o valor de b?");
+        let intB = parseInt(b);
+        let c = prompt("Qual é o valor de c?");
+        let intC = parseInt(c);
+        
+        let multiplicarB = b * b;
+        let multiplicarAC = a * c;
+        let multiplicar = 4 * multiplicarAC;
+        let subtrair = multiplicarB - multiplicar;
+        let text = document.querySelector(".text").innerHTML = "Resolvendo Bhaskara";
+
+        let mostrar = "";
+
+        for(let i = 1; i <= 1; i++){
+            mostrar += "<strong>" + "A equação atual é " + intA + "x² +" + " " + multiplicarAC + "x +" + " " + intC + " = 0" + "<br>";
+            mostrar += "O cálculo realizado será Δ = " + multiplicarAC + "² -4." + intA + "." + intC + "<br>";
+            mostrar += "O valor caculado foi Δ = " + subtrair + "</strong>";
+        };
+        document.querySelector(".mostrar").innerHTML = mostrar;
+    };
+</script>
+</body>
+</html>
